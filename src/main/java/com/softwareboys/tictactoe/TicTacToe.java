@@ -4,6 +4,9 @@ public class TicTacToe {
 	private char[][] grid;
 	private char currentPlayer;
 	private int gridSize;
+	public boolean isOver;
+	public boolean isValidMove;
+	private int numberOfTurnsLeft;
 
 	TicTacToe()
 	{
@@ -11,6 +14,9 @@ public class TicTacToe {
 		gridSize = 3;
 		grid = new char[gridSize][gridSize];
 		initialize();
+		numberOfTurnsLeft = gridSize * gridSize;
+		isOver = false;
+		isValidMove = false;
 	}
 
 	public char getPlayer()
@@ -164,7 +170,37 @@ public class TicTacToe {
 
 	public void isWinner() 
 	{
+		if(isHorizontal() || isDiagonal() || isVertical()) {
+			isOver = true;
+		}
+	}
 
+	public void move(int i, int j)
+	{
+		moveIsValid(i, j);
+
+		if(isValidMove)
+		{
+			grid[i][j] = currentPlayer;
+			print();
+			numberOfTurnsLeft--;
+			isWinner();
+			changePlayer();
+		}
+	}
+
+	public void moveIsValid(int i, int j)
+	{
+		if (i < gridSize && j < gridSize && i >= 0 && j >= 0)
+		{
+			if(grid[i][j] == '-') {
+				isValidMove = true;
+			}
+		}
+		else
+		{
+			isValidMove = false;
+		}
 	}
 
 }
