@@ -7,6 +7,7 @@ public class TicTacToe {
 	public boolean isOver;
 	public boolean isValidMove;
 	private int numberOfTurnsLeft;
+	public boolean isOverDraw;
 
 	TicTacToe()
 	{
@@ -17,6 +18,7 @@ public class TicTacToe {
 		numberOfTurnsLeft = gridSize * gridSize;
 		isOver = false;
 		isValidMove = false;
+		isOverDraw = false;
 	}
 
 	public char getPlayer()
@@ -202,11 +204,20 @@ public class TicTacToe {
 		{
 			isValidMove = false;
 		}
+		if(numberOfTurnsLeft == 0) {
+			isOverDraw = true;
+		}
 	}
 
 	public String findWinner() 
 	{
-
+		if(isOverDraw) {
+			return "It's a draw!";
+		}
+		else {
+			changePlayer();
+			return "The winner is " + getPlayer();
+		}
 	}
 
 }
