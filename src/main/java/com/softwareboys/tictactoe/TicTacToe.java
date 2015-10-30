@@ -38,8 +38,7 @@ public class TicTacToe {
 
 	public void print()
 	{
-		String gridString = getGridAsString();
-		System.out.println(gridString);
+		System.out.println(getGridAsString());
 	}
 
 	public String getGridAsString()
