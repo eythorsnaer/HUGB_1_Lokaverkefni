@@ -96,4 +96,17 @@ public class TicTacToeTest {
 		assertEquals(true, game.isDiagonal());
 	}
 
+	@Test
+	public void moveTest()
+	{
+		game = new TicTacToe();
+
+		//test if change in valid grid
+		
+			char temp = game.getPlayer();
+			assertEquals('-', game.getSlot(1,1));
+			game.move(1, 1);
+			assertEquals(temp, game.getSlot(1,1));
+	}
+
 }

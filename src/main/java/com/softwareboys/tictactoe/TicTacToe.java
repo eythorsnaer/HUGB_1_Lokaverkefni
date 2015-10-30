@@ -162,6 +162,10 @@ public class TicTacToe {
 		return false;
 	}
 
+	public void isWinner() 
+	{
+
+	}
 
 }
 
