@@ -11,9 +11,21 @@ public class TicTacToeTest {
 
 
     @Test
-    public void constructorTest() {
-	game = new TicTacToe();
-	assertEquals('X', game.getPlayer());
-    }
+	public void constructorTest()
+	{
+		game = new TicTacToe();
+
+		//Test if initial player is X
+		assertEquals('X', game.getPlayer());
+
+		//Test if grid is of correct size
+		for(int i = 0; i < 3; i++)
+		{
+			for(int j = 0; j < 3; j++)
+			{
+				assertEquals('-', game.getSlot(i, j));
+			}
+		}
+	}
 
 }
