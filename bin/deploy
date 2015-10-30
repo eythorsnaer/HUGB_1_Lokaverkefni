@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JAR="TicTacToe.jar"
+JAR="TicTacToe-SoftwareBoys.jar"
 
 bin/clean
 bin/package

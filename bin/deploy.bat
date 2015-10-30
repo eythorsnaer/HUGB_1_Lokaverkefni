@@ -1,4 +1,4 @@
-set JAR="TicTacToe.jar"
+set JAR="TicTacToe-SoftwareBoys.jar"
 set LOCATION="C:\temp"
 
 REM Always deploy new version, clean before
