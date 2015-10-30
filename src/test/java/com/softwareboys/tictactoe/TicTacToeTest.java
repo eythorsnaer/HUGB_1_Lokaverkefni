@@ -64,5 +64,15 @@ public class TicTacToeTest {
 		assertEquals(true, game.isVertical());
 	}
 
+	@Test
+	public void isHorizontalTest() {
+		game = new TicTacToe();
+		game.grid[0][0] = 'X';
+		game.grid[1][0] = 'X';
+		game.grid[2][0] = 'X';
+
+		assertEquals(true, game.isHorizontal());
+	}
+
 
 }
