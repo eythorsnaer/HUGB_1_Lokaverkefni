@@ -4,7 +4,6 @@ public class TicTacToe {
 	private char[][] grid;
 	private char currentPlayer;
 
-
 	TicTacToe()
 	{
 		currentPlayer = 'X';
@@ -15,5 +14,7 @@ public class TicTacToe {
 		return currentPlayer;
 		// Does not need refactoring
 	}
+
+
 }
 

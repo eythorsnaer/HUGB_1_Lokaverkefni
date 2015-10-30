@@ -19,4 +19,18 @@ public class TicTacToeTest {
 		assertEquals('X', game.getPlayer());
 	}
 
+	@Test
+	public void constructorTestInitalized()
+	{
+		game = new TicTacToe();
+
+		// Test if grid is of correct size
+		for(int i = 0; i < 3; i++)
+		{
+			for(int j = 0; j < 3; j++)
+			{
+				assertEquals('-', game.getSlot(i, j));
+			}
+		}
+	}
 }
