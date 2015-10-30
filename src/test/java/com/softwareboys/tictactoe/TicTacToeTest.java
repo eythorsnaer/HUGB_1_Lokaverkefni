@@ -41,4 +41,15 @@ public class TicTacToeTest {
 
 		assertEquals("- - -\n- - -\n- - -", game.getGridAsString());
 	}
+
+	@Test
+	public void isCorrectPlayerTest() 
+	{
+		game = new TicTacToe(); 
+
+		game.changePlayer();
+
+		assertEquals('O', game.getPlayer());
+
+	}
 }

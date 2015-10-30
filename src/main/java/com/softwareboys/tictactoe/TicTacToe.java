@@ -64,5 +64,10 @@ public class TicTacToe {
 		 return result;
 	}
 
+	public void changePlayer() 
+	{
+		
+	}
+
 }
 
