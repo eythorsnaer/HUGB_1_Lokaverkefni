@@ -76,5 +76,9 @@ public class TicTacToe {
 		}
 	}
 
+	public boolean isVertical() {
+	
+	}
+
 }
 
