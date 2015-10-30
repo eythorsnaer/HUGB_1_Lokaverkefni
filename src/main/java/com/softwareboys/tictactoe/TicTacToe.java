@@ -16,13 +16,13 @@ public class TicTacToe {
 	public char getPlayer()
 	{
 		return currentPlayer;
-		//does not need refactoring
+		// Does not need refactoring
 	}
 
 	public char getSlot(int i, int j)
 	{
 		return grid[i][j];
-		//does not need refractoring
+		// Does not need refractoring
 	}
 
 	public void initialize()
@@ -63,6 +63,11 @@ public class TicTacToe {
 		 }
 
 		 return result;
+	}
+
+	public static void main(String[] args)
+	{
+
 	}
 }
 
