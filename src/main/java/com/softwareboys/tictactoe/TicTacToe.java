@@ -131,6 +131,34 @@ public class TicTacToe {
 
 	public boolean isDiagonal() 
 	{
+		int count = 0;
+		for(int i = 0; i < gridSize ; i++) 
+		{
+			if(grid[i][i] == currentPlayer) 
+			{
+				count++;
+			}
+		}
+		
+		if(count == gridSize) 
+		{
+			return true;
+		}
+
+		count = 0;
+		
+		for(int i = gridSize - 1, j = 0 ; i >= 0 || j < gridSize ; i--, j++) 
+		{
+			if(grid[j][i] == currentPlayer) {
+				count++;
+			}
+		}
+		
+		if(count == gridSize) 
+		{
+			return true;
+		}
+
 		return false;
 	}
 
