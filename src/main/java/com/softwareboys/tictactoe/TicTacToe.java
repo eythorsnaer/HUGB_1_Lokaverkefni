@@ -3,11 +3,13 @@ package is.softwareboys.tictactoe;
 public class TicTacToe {
 	private char[][] grid;
 	private char currentPlayer;
+	private int gridSize;
 
 	TicTacToe()
 	{
 		currentPlayer = 'X';
-		grid = new char[3][3];
+		gridSize = 3;
+		grid = new char[gridSize][gridSize];
 		initialize();
 	}
 
@@ -25,9 +27,9 @@ public class TicTacToe {
 
 	public void initialize()
 	{
-		for(int i = 0; i < 3; i++)
+		for(int i = 0; i < gridSize; i++)
 		{
-			for(int j = 0; j < 3; j++)
+			for(int j = 0; j < gridSize; j++)
 			{
 				grid[i][j] = '-';
 			}
