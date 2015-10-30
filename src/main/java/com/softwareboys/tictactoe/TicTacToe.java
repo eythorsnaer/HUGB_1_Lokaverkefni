@@ -27,9 +27,9 @@ public class TicTacToe {
 
 	public void initialize()
 	{
-		for(int i = 0; i < 3; i++)
+		for(int i = 0; i < gridSize; i++)
 		{
-			for(int j = 0; j < 3; j++)
+			for(int j = 0; j < gridSize; j++)
 			{
 				grid[i][j] = '-';
 			}
