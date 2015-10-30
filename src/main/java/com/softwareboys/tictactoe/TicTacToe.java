@@ -7,10 +7,12 @@ public class TicTacToe {
 
 	TicTacToe()
 	{
-	
+		currentPlayer = 'X';
 	}
 
-
-
+	public char getPlayer()
+	{
+		return 'X';
+	}
 }
 
