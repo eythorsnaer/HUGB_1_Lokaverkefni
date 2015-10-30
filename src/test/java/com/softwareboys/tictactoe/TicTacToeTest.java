@@ -85,4 +85,15 @@ public class TicTacToeTest {
 		assertEquals(true, game.isDiagonal());
 	}
 
+	@Test
+	public void isDiagonal2Test() {
+		game = new TicTacToe();
+		game.changePlayer();
+		game.putSlot(0, 0, 'O');
+		game.putSlot(1, 1, 'O');
+		game.putSlot(2, 2, 'O');
+
+		assertEquals(true, game.isDiagonal());
+	}
+
 }
