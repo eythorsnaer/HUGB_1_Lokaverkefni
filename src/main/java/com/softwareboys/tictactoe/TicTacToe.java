@@ -107,7 +107,7 @@ public class TicTacToe {
 
 	public boolean isHorizontal() 
 	{
-
+		
 	}
 
 }
