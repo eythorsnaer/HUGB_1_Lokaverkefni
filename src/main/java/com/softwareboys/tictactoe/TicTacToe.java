@@ -105,7 +105,8 @@ public class TicTacToe {
 		return false;
 	}
 
-	public boolean isHorizontal() {
+	public boolean isHorizontal() 
+	{
 		int count = 0;
 		for(int i = 0 ; i < gridSize ; i++) 
 		{
@@ -127,6 +128,12 @@ public class TicTacToe {
 		}
 		return false;
 	}
+
+	public boolean isDiagonal() 
+	{
+		return false;
+	}
+
 
 }
 
