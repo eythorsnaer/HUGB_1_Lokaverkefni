@@ -12,7 +12,8 @@ public class TicTacToe {
 
 	public char getPlayer()
 	{
-		return 'X';
+		return currentPlayer;
+		// Does not need refactoring
 	}
 }
 
