@@ -157,7 +157,8 @@ public class TicTacToe {
 		
 		for(int i = gridSize - 1, j = 0 ; i >= 0 || j < gridSize ; i--, j++) 
 		{
-			if(grid[j][i] == currentPlayer) {
+			if(grid[j][i] == currentPlayer) 
+			{
 				count++;
 			}
 		}
@@ -196,7 +197,8 @@ public class TicTacToe {
 	{
 		if (i < gridSize && j < gridSize && i >= 0 && j >= 0)
 		{
-			if(grid[i][j] == '-') {
+			if(grid[i][j] == '-') 
+			{
 				isValidMove = true;
 			}
 		}
@@ -204,17 +206,20 @@ public class TicTacToe {
 		{
 			isValidMove = false;
 		}
-		if(numberOfTurnsLeft == 0) {
+		if(numberOfTurnsLeft == 0) 
+		{
 			isOverDraw = true;
 		}
 	}
 
 	public String findWinner() 
 	{
-		if(isOverDraw) {
+		if(isOverDraw) 
+		{
 			return "It's a draw!";
 		}
-		else {
+		else 
+		{
 			changePlayer();
 			return "The winner is " + getPlayer();
 		}
