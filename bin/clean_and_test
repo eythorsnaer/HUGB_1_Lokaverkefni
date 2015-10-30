@@ -1,7 +1,5 @@
 #!/bin/bash
 
 
-
 ./gradlew clean
-./gradlew compile
 ./gradlew test
