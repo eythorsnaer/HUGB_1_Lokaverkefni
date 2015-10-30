@@ -36,5 +36,10 @@ public class TicTacToe {
 		}
 	}
 
+	public void print()
+	{
+		
+	}
+
 }
 
