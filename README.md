@@ -1,3 +1,3 @@
- [![Build Status](https://api.travis-ci.com/eythorsnaer/TicTacToe-SoftwareBoys.svg?token=xLTUxUoAa8TNZ9sKmYTN)](https://travis-ci.com//eythorsnaer/TicTacToe-SoftwareBoys)
+ [![Build Status](https://api.travis-ci.com/eythorsnaer/TicTacToe-SoftwareBoys.svg?token=xLTUxUoAa8TNZ9sKmYTN)](https://travis-ci.com/eythorsnaer/TicTacToe-SoftwareBoys)
 
 # TicTacToe-SoftwareBoys
