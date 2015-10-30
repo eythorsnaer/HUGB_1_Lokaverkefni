@@ -2,9 +2,17 @@ package is.softwareboys.tictactoe;
 
 public class TicTacToe {
 	private char[][] grid;
+	private char currentPlayer;
 
-    public static void main(String[] args) {
-    }
+
+	TicTacToe()
+	{
+		currentPlayer = 'X';
+	}
+
+	public char getPlayer()
+	{
+		return 'X';
+	}
 }
-
 
