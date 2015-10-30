@@ -170,7 +170,8 @@ public class TicTacToe {
 
 	public void isWinner() 
 	{
-		if(isHorizontal() || isDiagonal() || isVertical()) {
+		if(isHorizontal() || isDiagonal() || isVertical()) 
+		{
 			isOver = true;
 		}
 	}
