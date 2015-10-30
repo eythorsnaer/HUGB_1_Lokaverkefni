@@ -57,10 +57,14 @@ public class TicTacToeTest {
 	public void isVerticalTest() {
 		game = new TicTacToe();
 
+		game.putSlot(0, 0, 'X');
+		game.putSlot(0, 1, 'X');
+		game.putSlot(0, 2, 'X');
+		/*
 		game.grid[0][0] = 'X';
 		game.grid[0][1] = 'X';
 		game.grid[0][2] = 'X';
-
+*/
 		assertEquals(true, game.isVertical());
 	}
 }

@@ -25,6 +25,11 @@ public class TicTacToe {
 		// Does not need refractoring
 	}
 
+	public void putSlot(int i, int j, char c)
+	{
+		grid[i][j] = c;
+	}
+
 	public void initialize()
 	{
 		for(int i = 0; i < gridSize; i++)
@@ -77,7 +82,21 @@ public class TicTacToe {
 	}
 
 	public boolean isVertical() {
-	
+		int count = 0;
+		for(int i = 0 ; i < gridSize ; i++) {
+			for(int j = 0 ; j < gridSize ; j++) {
+				if(grid[i][j] == currentPlayer) {
+					count++;
+				}
+			}
+			if(count == gridSize) {
+				return true;
+			}
+			else {
+				count = 0;
+			}
+		}
+		return false;
 	}
 
 }
