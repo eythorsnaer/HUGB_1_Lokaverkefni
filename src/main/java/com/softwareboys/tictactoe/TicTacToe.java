@@ -8,7 +8,9 @@ public class TicTacToe {
 	TicTacToe()
 	{
 		currentPlayer = 'X';
-		//gridSize = 3;
+		gridSize = 3;
+		grid = new char[gridSize][gridSize];
+		initialize();
 	}
 
 	public char getPlayer()
@@ -16,11 +18,22 @@ public class TicTacToe {
 		return currentPlayer;
 		//does not need refactoring
 	}
-/*
+
 	public char getSlot(int i, int j)
 	{
 		return grid[i][j];
 		//does not need refractoring
-	}*/
+	}
+
+	public void initialize()
+	{
+		for(int i = 0; i < 3; i++)
+		{
+			for(int j = 0; j < 3; j++)
+			{
+				grid[i][j] = '-';
+			}
+		}
+	}
 }
 
