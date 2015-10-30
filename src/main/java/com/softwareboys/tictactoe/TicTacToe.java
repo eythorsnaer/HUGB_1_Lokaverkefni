@@ -105,9 +105,27 @@ public class TicTacToe {
 		return false;
 	}
 
-	public boolean isHorizontal() 
-	{
-		
+	public boolean isHorizontal() {
+		int count = 0;
+		for(int i = 0 ; i < gridSize ; i++) 
+		{
+			for(int j = 0 ; j < gridSize ; j++) 
+			{
+				if(grid[j][i] == currentPlayer) 
+				{
+					count++;
+				}
+			}
+			if(count == gridSize) 
+			{
+				return true;
+			}
+			else 
+			{
+				count = 0;
+			}
+		}
+		return false;
 	}
 
 }
