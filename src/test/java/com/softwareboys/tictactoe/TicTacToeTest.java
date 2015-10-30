@@ -34,4 +34,12 @@ public class TicTacToeTest {
 		}
 	}
 
+	@Test
+	public void printStringTest()
+	{
+		game = new TicTacToe();
+
+		assertEquals("- - -\n- - -\n- - -", game.getGridAsString());
+	}
+
 }

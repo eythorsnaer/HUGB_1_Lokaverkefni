@@ -35,5 +35,34 @@ public class TicTacToe {
 			}
 		}
 	}
+
+	public void print()
+	{
+		String gridString = getGridAsString();
+		System.out.println(gridString);
+	}
+
+	public String getGridAsString()
+	{
+		 String result = "";
+
+		 for (int i = 0; i < gridSize; i++)
+		 {
+			 for (int j = 0; j < gridSize; j++)
+			 {
+				 result += grid[i][j];
+				 if (j != 2)
+				 {
+					 result += " ";
+				 }
+			 }
+			 if (i != 2)
+			 {
+				 result += "\n";
+			 }
+		 }
+
+		 return result;
+	}
 }
 
