@@ -1,5 +1,7 @@
 package is.softwareboys.tictactoe;
 
+import java.util.Scanner;
+
 public class TicTacToe {
 	private char[][] grid;
 	private char currentPlayer;
@@ -225,5 +227,28 @@ public class TicTacToe {
 		}
 	}
 
-}
+	public static void main(String[] args) 
+	{
+		TicTacToe game = new TicTacToe();
+		Scanner in = new Scanner(System.in);
+		int i, j;
+
+		game.print();
+		while (game.isOver == false && game.isOverDraw == false)
+		{
+			do 
+			{
+				game.isValidMove = false;
+				
+				i = in.nextInt();
+				j = in.nextInt();
+
+				game.move(i, j);
+			}
+			while (game.isValidMove == false);			
+		}
+		String theWinner = game.findWinner();
+		System.out.println(theWinner);
+		in.close();
+	}}
 
