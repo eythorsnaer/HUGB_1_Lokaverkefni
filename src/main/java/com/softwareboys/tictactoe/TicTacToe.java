@@ -92,9 +92,9 @@ public class TicTacToe {
 	public boolean isVertical() 
 	{
 		int count = 0;
-		for(int i = 0 ; i < gridSize ; i++) 
+		for(int i = 0; i < gridSize ; i++) 
 		{
-			for(int j = 0 ; j < gridSize ; j++) 
+			for(int j = 0; j < gridSize ; j++) 
 			{
 				if(grid[i][j] == currentPlayer) 
 				{
@@ -116,9 +116,9 @@ public class TicTacToe {
 	public boolean isHorizontal() 
 	{
 		int count = 0;
-		for(int i = 0 ; i < gridSize ; i++) 
+		for(int i = 0; i < gridSize ; i++) 
 		{
-			for(int j = 0 ; j < gridSize ; j++) 
+			for(int j = 0; j < gridSize ; j++) 
 			{
 				if(grid[j][i] == currentPlayer) 
 				{
@@ -140,7 +140,7 @@ public class TicTacToe {
 	public boolean isDiagonal() 
 	{
 		int count = 0;
-		for(int i = 0; i < gridSize ; i++) 
+		for(int i = 0; i < gridSize; i++) 
 		{
 			if(grid[i][i] == currentPlayer) 
 			{
@@ -155,7 +155,7 @@ public class TicTacToe {
 
 		count = 0;
 		
-		for(int i = gridSize - 1, j = 0 ; i >= 0 || j < gridSize ; i--, j++) 
+		for(int i = gridSize - 1, j = 0; i >= 0 || j < gridSize; i--, j++) 
 		{
 			if(grid[j][i] == currentPlayer) 
 			{
