@@ -203,9 +203,14 @@ public class TicTacToe {
 			{
 				isValidMove = true;
 			}
+			else 
+			{
+				System.out.println("That spot is already taken, try again");
+			}
 		}
 		else
 		{
+			System.out.println("Input is invalid, try again");
 			isValidMove = false;
 		}
 		if(numberOfTurnsLeft == 0) 
