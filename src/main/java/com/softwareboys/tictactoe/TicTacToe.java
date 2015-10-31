@@ -227,28 +227,38 @@ public class TicTacToe {
 		}
 	}
 
-	public static void main(String[] args) 
+	public void declareWinner()
 	{
-		TicTacToe game = new TicTacToe();
+		String theWinner = findWinner();
+		System.out.println(theWinner);
+	}
+	
+	public void play() 
+	{
 		Scanner in = new Scanner(System.in);
 		int i, j;
 
-		game.print();
-		while (game.isOver == false && game.isOverDraw == false)
+		while (isOver == false && isOverDraw == false)
 		{
 			do 
 			{
-				game.isValidMove = false;
+				isValidMove = false;
 				
 				i = in.nextInt();
 				j = in.nextInt();
 
-				game.move(i, j);
+				move(i, j);
 			}
-			while (game.isValidMove == false);			
+			while (isValidMove == false);			
 		}
-		String theWinner = game.findWinner();
-		System.out.println(theWinner);
 		in.close();
-	}}
-
+	}
+	
+	public static void main(String[] args) 
+	{
+		TicTacToe game = new TicTacToe();
+		game.print();
+		game.play();
+		game.declareWinner();
+	}
+}
