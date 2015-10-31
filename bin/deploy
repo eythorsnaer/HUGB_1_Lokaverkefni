@@ -3,10 +3,11 @@
 JAR="TicTacToe-SoftwareBoys.jar"
 
 bin/clean
+./gradlew build
 bin/package
 
 
-test -f /tmp/${JAR} && rm /tmp/&{JAR}
+test -f /tmp/${JAR} && rm /tmp/${JAR}
 cp build/libs/${JAR} /tmp
 
 java -jar /tmp/${JAR}
