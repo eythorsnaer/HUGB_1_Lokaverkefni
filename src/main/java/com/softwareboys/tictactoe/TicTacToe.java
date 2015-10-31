@@ -58,7 +58,7 @@ public class TicTacToe {
 	{
 		 String result = "";
 
-		 for (int i = 0; i < gridSize; i++)
+		 for(int i = 0; i < gridSize; i++)
 		 {
 			 for (int j = 0; j < gridSize; j++)
 			 {
@@ -68,7 +68,7 @@ public class TicTacToe {
 					 result += " ";
 				 }
 			 }
-			 if (i != 2)
+			 if(i != 2)
 			 {
 				 result += "\n";
 			 }
@@ -195,7 +195,7 @@ public class TicTacToe {
 
 	public void moveIsValid(int i, int j)
 	{
-		if (i < gridSize && j < gridSize && i >= 0 && j >= 0)
+		if(i < gridSize && j < gridSize && i >= 0 && j >= 0)
 		{
 			if(grid[i][j] == '-') 
 			{
