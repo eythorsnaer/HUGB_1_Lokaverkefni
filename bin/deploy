@@ -9,7 +9,7 @@ JAR="TicTacToe-SoftwareBoys.jar"
 bin/clean
 bin/build
 bin/package
-
+bin/DocConv
 
 test -f /tmp/${JAR} && rm /tmp/${JAR}
 cp build/libs/${JAR} ~/tmp
