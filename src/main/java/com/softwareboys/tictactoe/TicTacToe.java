@@ -193,6 +193,9 @@ public class TicTacToe {
 			isWinner();
 			changePlayer();
 		}
+		if(numberOfTurnsLeft == 0) {
+			isOverDraw = true;
+		}
 	}
 
 	public void moveIsValid(int i, int j)

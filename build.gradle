@@ -11,6 +11,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
+
 mainClassName = "is.softwareboys.tictactoe.TicTacToe"
 
 // In this section you declare where to find the dependencies of your project
@@ -37,6 +38,7 @@ jar {
 			attributes("Main-Class": "is.softwareboys.tictactoe.TicTacToe") }
 }
 
-task stage {
-  dependsOn installDist
+run {
+	standardInput = System.in
 }
+
