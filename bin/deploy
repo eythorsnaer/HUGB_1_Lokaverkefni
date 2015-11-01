@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d ~/tmp ]; then
+	mkdir ~/tmp/
+fi
+
 JAR="TicTacToe-SoftwareBoys.jar"
 
 bin/clean
@@ -7,6 +11,6 @@ bin/build
 bin/package
 
 test -f /tmp/${JAR} && rm /tmp/${JAR}
-cp build/libs/${JAR} /tmp
+cp build/libs/${JAR} ~/tmp
 
-java -jar /tmp/${JAR}
+java -jar ~/tmp/${JAR}
