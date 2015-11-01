@@ -3,7 +3,7 @@
 JAR="TicTacToe-SoftwareBoys.jar"
 
 bin/clean
-./gradlew build
+bin/build
 bin/package
 
 
