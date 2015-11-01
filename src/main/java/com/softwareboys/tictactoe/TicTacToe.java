@@ -1,5 +1,7 @@
 package is.softwareboys.tictactoe;
 
+import java.util.Scanner;
+
 public class TicTacToe {
 	private char[][] grid;
 	private char currentPlayer;
@@ -191,6 +193,9 @@ public class TicTacToe {
 			isWinner();
 			changePlayer();
 		}
+		if(numberOfTurnsLeft == 0) {
+			isOverDraw = true;
+		}
 	}
 
 	public void moveIsValid(int i, int j)
@@ -201,9 +206,14 @@ public class TicTacToe {
 			{
 				isValidMove = true;
 			}
+			else 
+			{
+				System.out.println("That spot is already taken, try again");
+			}
 		}
 		else
 		{
+			System.out.println("Input is invalid, try again");
 			isValidMove = false;
 		}
 		if(numberOfTurnsLeft == 0) 
@@ -225,5 +235,38 @@ public class TicTacToe {
 		}
 	}
 
-}
+	public void declareWinner()
+	{
+		String theWinner = findWinner();
+		System.out.println(theWinner);
+	}
+	
+	public void play() 
+	{
+		Scanner in = new Scanner(System.in);
+		int i, j;
 
+		while (isOver == false && isOverDraw == false)
+		{
+			do 
+			{
+				isValidMove = false;
+				
+				i = in.nextInt();
+				j = in.nextInt();
+
+				move(i, j);
+			}
+			while (isValidMove == false);			
+		}
+		in.close();
+	}
+	
+	public static void main(String[] args) 
+	{
+		TicTacToe game = new TicTacToe();
+		game.print();
+		game.play();
+		game.declareWinner();
+	}
+}

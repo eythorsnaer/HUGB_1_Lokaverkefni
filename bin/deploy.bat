@@ -3,6 +3,7 @@ set LOCATION="C:\temp"
 
 REM Always deploy new version, clean before
 call bin\clean.bat
+gradlew.bat build
 call bin\package.bat
 
 REM If jar file exists under C:\temp, remove it
