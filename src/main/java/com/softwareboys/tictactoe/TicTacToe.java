@@ -53,7 +53,9 @@ public class TicTacToe {
 
 	public void print()
 	{
+		System.out.println();
 		System.out.println(getGridAsString());
+		System.out.println();
 	}
 
 	public String getGridAsString()
@@ -215,7 +217,9 @@ public class TicTacToe {
 			}
 			else
 			{
+				System.out.println();
 				System.out.println("That spot is already taken, try again");
+				System.out.println();
 			}
 		}
 		else
@@ -238,14 +242,16 @@ public class TicTacToe {
 		else
 		{
 			changePlayer();
-			return "The winner is " + getPlayer();
+			return "The winner is " + getPlayer() + "!";
 		}
 	}
 
 	public void declareWinner()
 	{
 		String theWinner = findWinner();
+		System.out.println();
 		System.out.println(theWinner);
+		System.out.println();
 	}
 
 	public boolean isNumeric(String str)
@@ -270,6 +276,10 @@ public class TicTacToe {
 		{
 			do
 			{
+				System.out.println();
+				System.out.println("It's " + getPlayer() + "'s turn!");
+				System.out.println();
+
 				isValidMove = false;
 
 				String i, j;
@@ -293,9 +303,18 @@ public class TicTacToe {
 		in.close();
 	}
 
+	public void printWelcomeMessage()
+	{
+		System.out.println();
+		System.out.println("Welcome to Tic Tac Toe!");
+		System.out.println("This game was made by S O F T W A R E B O Y S");
+		System.out.println();
+	}
+
 	public static void main(String[] args)
 	{
 		TicTacToe game = new TicTacToe();
+		game.printWelcomeMessage();
 		game.print();
 		game.play();
 		game.declareWinner();
