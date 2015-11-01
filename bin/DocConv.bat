@@ -1,3 +1,3 @@
-pandoc -f markdown -t html docs/design > docs/design.html
-pandoc -f markdown -t html docs/dmanual > docs/dmanual.html
-pandoc -f markdown -t html docs/manual > docs/manual.html
+pandoc -f markdown -t html docs/Design-Report.md > docs/Design-Report.html
+pandoc -f markdown -t html docs/Development-Manual.md > docs/Development-Manual.html
+pandoc -f markdown -t html docs/Administration-Manual.md > docs/Administration-Manual.html
