@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class TicTacToeTest {
 
-    //blabla
     TicTacToe game;
 
 
@@ -39,7 +38,7 @@ public class TicTacToeTest {
 	{
 		game = new TicTacToe();
 
-		assertEquals("- - -\n- - -\n- - -", game.getGridAsString());
+		assertEquals("- - -\n- - -\n- - - ", game.getGridAsString());
 	}
 
 	@Test

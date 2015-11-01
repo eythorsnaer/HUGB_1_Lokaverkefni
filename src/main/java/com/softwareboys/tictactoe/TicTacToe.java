@@ -67,14 +67,14 @@ public class TicTacToe {
 			 for (int j = 0; j < gridSize; j++)
 			 {
 				 result += grid[i][j];
-				 if (j != 2)
+				 if (j != gridSize - 1)
 				 {
 					 result += " ";
 				 }
 			 }
-			 if(i != 2)
+			 if(i != gridSize - 1)
 			 {
-				 result += "\n";
+				 result += " \n";
 			 }
 		 }
 
@@ -105,7 +105,7 @@ public class TicTacToe {
 					count++;
 				}
 			}
-			if(count == gridSize)
+			if(count == 3)
 			{
 				return true;
 			}
@@ -129,7 +129,7 @@ public class TicTacToe {
 					count++;
 				}
 			}
-			if(count == gridSize)
+			if(count == 3)
 			{
 				return true;
 			}
@@ -152,7 +152,7 @@ public class TicTacToe {
 			}
 		}
 
-		if(count == gridSize)
+		if(count == 3)
 		{
 			return true;
 		}
@@ -167,7 +167,7 @@ public class TicTacToe {
 			}
 		}
 
-		if(count == gridSize)
+		if(count == 3)
 		{
 			return true;
 		}
