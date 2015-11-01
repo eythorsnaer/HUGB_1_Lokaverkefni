@@ -109,4 +109,21 @@ public class TicTacToeTest {
 			assertEquals(temp, game.getSlot(1,1));
 	}
 
+	@Test
+	public void isDrawTest()
+	{
+		game = new TicTacToe();
+		game.move(0, 0);
+		game.move(0, 1);
+		game.move(1, 0);
+		game.move(2, 0);
+		game.move(1, 1);
+		game.move(2, 2);
+		game.move(0, 2);
+		game.move(1, 2);
+		game.move(2, 1);
+
+		assertEquals("It's a draw!", game.findWinner());
+	}
+
 }
