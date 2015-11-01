@@ -195,7 +195,8 @@ public class TicTacToe {
 			isWinner();
 			changePlayer();
 		}
-		if(numberOfTurnsLeft == 0 && isOver == false) {
+		if(numberOfTurnsLeft == 0 && isOver == false) 
+		{
 			isOverDraw = true;
 		}
 	}
@@ -248,9 +249,8 @@ public class TicTacToe {
 
 	public void declareWinner()
 	{
-		String theWinner = findWinner();
 		System.out.println();
-		System.out.println(theWinner);
+		System.out.println(findWinner());
 		System.out.println();
 	}
 
