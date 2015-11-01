@@ -5,13 +5,18 @@ if [ ! -d ~/tmp ]; then
 fi
 
 JAR="TicTacToe-SoftwareBoys.jar"
+TAR="TicTacToe-SoftwareBoys.tar"
+ZIP="TicTacToe-SoftwareBoys.zip"
 
 bin/clean
 bin/build
 bin/package
 
 
-test -f /tmp/${JAR} && rm /tmp/${JAR}
+test -f /tmp/${JAR} &&  rm -rf ~/tmp
 cp build/libs/${JAR} ~/tmp
+cp -a build/reports/. ~/tmp
+cp build/distributions/${TAR} ~/tmp
+cp build/distributions/${ZIP} ~/tmp
 
 java -jar ~/tmp/${JAR}
