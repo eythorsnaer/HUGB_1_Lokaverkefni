@@ -5,6 +5,7 @@ REM Always deploy new version, clean before
 call bin\clean.bat
 call bin\build.bat
 call bin\package.bat
+call bin\DocConv.bat
 
 REM If jar file exists under C:\temp, remove it
 if exist %LOCATION%%JAR% del /F %LOCATION%%JAR%
