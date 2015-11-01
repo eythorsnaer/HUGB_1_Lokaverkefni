@@ -79,35 +79,35 @@ public class TicTacToe {
 		 return result;
 	}
 
-	public void changePlayer() 
+	public void changePlayer()
 	{
 		if(currentPlayer == 'X')
 		{
 			currentPlayer = 'O';
 		}
-		else 
+		else
 		{
 			currentPlayer = 'X';
 		}
 	}
 
-	public boolean isVertical() 
+	public boolean isVertical()
 	{
 		int count = 0;
-		for(int i = 0; i < gridSize ; i++) 
+		for(int i = 0; i < gridSize ; i++)
 		{
-			for(int j = 0; j < gridSize ; j++) 
+			for(int j = 0; j < gridSize ; j++)
 			{
-				if(grid[i][j] == currentPlayer) 
+				if(grid[i][j] == currentPlayer)
 				{
 					count++;
 				}
 			}
-			if(count == gridSize) 
+			if(count == gridSize)
 			{
 				return true;
 			}
-			else 
+			else
 			{
 				count = 0;
 			}
@@ -115,23 +115,23 @@ public class TicTacToe {
 		return false;
 	}
 
-	public boolean isHorizontal() 
+	public boolean isHorizontal()
 	{
 		int count = 0;
-		for(int i = 0; i < gridSize ; i++) 
+		for(int i = 0; i < gridSize ; i++)
 		{
-			for(int j = 0; j < gridSize ; j++) 
+			for(int j = 0; j < gridSize ; j++)
 			{
-				if(grid[j][i] == currentPlayer) 
+				if(grid[j][i] == currentPlayer)
 				{
 					count++;
 				}
 			}
-			if(count == gridSize) 
+			if(count == gridSize)
 			{
 				return true;
 			}
-			else 
+			else
 			{
 				count = 0;
 			}
@@ -139,33 +139,33 @@ public class TicTacToe {
 		return false;
 	}
 
-	public boolean isDiagonal() 
+	public boolean isDiagonal()
 	{
 		int count = 0;
-		for(int i = 0; i < gridSize; i++) 
+		for(int i = 0; i < gridSize; i++)
 		{
-			if(grid[i][i] == currentPlayer) 
+			if(grid[i][i] == currentPlayer)
 			{
 				count++;
 			}
 		}
-		
-		if(count == gridSize) 
+
+		if(count == gridSize)
 		{
 			return true;
 		}
 
 		count = 0;
-		
-		for(int i = gridSize - 1, j = 0; i >= 0 || j < gridSize; i--, j++) 
+
+		for(int i = gridSize - 1, j = 0; i >= 0 || j < gridSize; i--, j++)
 		{
-			if(grid[j][i] == currentPlayer) 
+			if(grid[j][i] == currentPlayer)
 			{
 				count++;
 			}
 		}
-		
-		if(count == gridSize) 
+
+		if(count == gridSize)
 		{
 			return true;
 		}
@@ -173,9 +173,9 @@ public class TicTacToe {
 		return false;
 	}
 
-	public void isWinner() 
+	public void isWinner()
 	{
-		if(isHorizontal() || isDiagonal() || isVertical()) 
+		if(isHorizontal() || isDiagonal() || isVertical())
 		{
 			isOver = true;
 		}
@@ -193,42 +193,49 @@ public class TicTacToe {
 			isWinner();
 			changePlayer();
 		}
-		if(numberOfTurnsLeft == 0) {
+		if(numberOfTurnsLeft == 0 && isOver == false) {
 			isOverDraw = true;
 		}
+	}
+
+	public void printInvalidMoveMessage()
+	{
+		System.out.println();
+		System.out.println("That is not a valid coordinate, please enter a new one!");
+		System.out.println();
 	}
 
 	public void moveIsValid(int i, int j)
 	{
 		if(i < gridSize && j < gridSize && i >= 0 && j >= 0)
 		{
-			if(grid[i][j] == '-') 
+			if(grid[i][j] == '-')
 			{
 				isValidMove = true;
 			}
-			else 
+			else
 			{
 				System.out.println("That spot is already taken, try again");
 			}
 		}
 		else
 		{
-			System.out.println("Input is invalid, try again");
+			printInvalidMoveMessage();
 			isValidMove = false;
 		}
-		if(numberOfTurnsLeft == 0) 
+		if(numberOfTurnsLeft == 0)
 		{
 			isOverDraw = true;
 		}
 	}
 
-	public String findWinner() 
+	public String findWinner()
 	{
-		if(isOverDraw) 
+		if(isOverDraw)
 		{
 			return "It's a draw!";
 		}
-		else 
+		else
 		{
 			changePlayer();
 			return "The winner is " + getPlayer();
@@ -240,29 +247,53 @@ public class TicTacToe {
 		String theWinner = findWinner();
 		System.out.println(theWinner);
 	}
-	
-	public void play() 
+
+	public boolean isNumeric(String str)
+	{
+	  try
+	  {
+	    int d = Integer.parseInt(str);
+	  }
+	  catch(NumberFormatException exception)
+	  {
+	    return false;
+	  }
+	  return true;
+	}
+
+	public void play()
 	{
 		Scanner in = new Scanner(System.in);
-		int i, j;
+		int a, b;
 
 		while (isOver == false && isOverDraw == false)
 		{
-			do 
+			do
 			{
 				isValidMove = false;
-				
-				i = in.nextInt();
-				j = in.nextInt();
 
-				move(i, j);
+				String i, j;
+
+				i = in.next();
+				j = in.next();
+
+				if (isNumeric(i) && isNumeric(j))
+				{
+					a = Integer.parseInt(i);
+					b = Integer.parseInt(j);
+					move(a, b);
+				}
+				else
+				{
+					printInvalidMoveMessage();
+				}
 			}
-			while (isValidMove == false);			
+			while (isValidMove == false);
 		}
 		in.close();
 	}
-	
-	public static void main(String[] args) 
+
+	public static void main(String[] args)
 	{
 		TicTacToe game = new TicTacToe();
 		game.print();
