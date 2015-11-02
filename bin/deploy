@@ -11,7 +11,7 @@ ZIP="TicTacToe-SoftwareBoys.zip"
 bin/clean
 bin/build
 bin/package
-
+bin/DocConv
 
 test -f /tmp/${JAR} &&  rm -rf ~/tmp
 cp build/libs/${JAR} ~/tmp

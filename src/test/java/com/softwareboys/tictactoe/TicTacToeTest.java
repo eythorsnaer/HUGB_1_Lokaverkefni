@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class TicTacToeTest {
 
-    //blabla
     TicTacToe game;
 
 
@@ -39,13 +38,13 @@ public class TicTacToeTest {
 	{
 		game = new TicTacToe();
 
-		assertEquals("- - -\n- - -\n- - -", game.getGridAsString());
+		assertEquals("- - - \n- - - \n- - -", game.getGridAsString());
 	}
 
 	@Test
-	public void isCorrectPlayerTest() 
+	public void isCorrectPlayerTest()
 	{
-		game = new TicTacToe(); 
+		game = new TicTacToe();
 
 		game.changePlayer();
 
@@ -102,7 +101,7 @@ public class TicTacToeTest {
 		game = new TicTacToe();
 
 		//test if change in valid grid
-		
+
 			char temp = game.getPlayer();
 			assertEquals('-', game.getSlot(1,1));
 			game.move(1, 1);
@@ -125,5 +124,21 @@ public class TicTacToeTest {
 
 		assertEquals("It's a draw!", game.findWinner());
 	}
+
+  @Test
+  public void isNumericTest1()
+  {
+    game = new TicTacToe();
+
+    assertEquals(true, game.isNumeric("1"));
+  }
+
+  @Test
+  public void isNumericTest2()
+  {
+    game = new TicTacToe();
+
+    assertEquals(false, game.isNumeric("k"));
+  }
 
 }
