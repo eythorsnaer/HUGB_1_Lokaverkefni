@@ -15,12 +15,12 @@ JAR="TicTacToe-SoftwareBoys.jar"
 TAR="TicTacToe-SoftwareBoys.tar"
 ZIP="TicTacToe-SoftwareBoys.zip"
 
-sh ./bin/clean
-sh ./bin/build
-sh ./bin/package
-sh ./bin/DocConv
 
-test -f /libs/${JAR}
+bin/clean
+bin/build
+bin/package
+bin/DocConv
+bin/unit_test -f /libs/${JAR}
 
 
 
