@@ -1,4 +1,4 @@
-package is.softwareboys.tictactoe;
+package com.softwareboys.tictactoe;
 
 import static org.junit.Assert.assertEquals;
 
