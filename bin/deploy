@@ -2,21 +2,33 @@
 
 if [ ! -d ~/tmp ]; then
 	mkdir ~/tmp/
+	mkdir ~/tmp/JAR
+	mkdir ~/tmp/REPORT
+	mkdir ~/tmp/TAR
+	mkdir ~/tmp/ZIP
+	mkdir ~/tmp/DOCUMENTATION
 fi
+
+
 
 JAR="TicTacToe-SoftwareBoys.jar"
 TAR="TicTacToe-SoftwareBoys.tar"
 ZIP="TicTacToe-SoftwareBoys.zip"
 
-bin/clean
-bin/build
-bin/package
-bin/DocConv
+sh ./bin/clean
+sh ./bin/build
+sh ./bin/package
+sh ./bin/DocConv
 
-test -f /tmp/${JAR} &&  rm -rf ~/tmp
-cp build/libs/${JAR} ~/tmp
-cp -a build/reports/. ~/tmp
-cp build/distributions/${TAR} ~/tmp
-cp build/distributions/${ZIP} ~/tmp
+test -f /libs/${JAR}
 
-java -jar ~/tmp/${JAR}
+
+
+cp build/libs/${JAR} ~/tmp/JAR
+cp -a build/reports/tests/. ~/tmp/REPORT
+cp build/distributions/${TAR} ~/tmp/TAR
+cp build/distributions/${ZIP} ~/tmp/ZIP
+cp -a docs/htmls/. ~/tmp/DOCUMENTATION
+
+
+java -jar ~/tmp/JAR/${JAR}
