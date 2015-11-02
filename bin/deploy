@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ ! -d ~/tmp ]; then
 	mkdir ~/tmp/
 	mkdir ~/tmp/JAR
@@ -8,7 +9,6 @@ if [ ! -d ~/tmp ]; then
 	mkdir ~/tmp/ZIP
 	mkdir ~/tmp/DOCUMENTATION
 fi
-
 
 
 JAR="TicTacToe-SoftwareBoys.jar"
@@ -21,7 +21,6 @@ bin/build
 bin/package
 bin/DocConv
 bin/unit_test -f /libs/${JAR}
-
 
 
 cp build/libs/${JAR} ~/tmp/JAR
