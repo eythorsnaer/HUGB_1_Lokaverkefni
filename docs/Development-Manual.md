@@ -54,5 +54,5 @@ You should familiarize yourself with basic git commands and when that is done yo
 * Navigate to root of the project
 * Run 
   ```
-    $call bin/build.bat
+    >call bin/build.bat
   ```
