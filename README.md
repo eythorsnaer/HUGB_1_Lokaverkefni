@@ -11,4 +11,4 @@ Documentations (Administration manual, design report and development manual) are
 
 Travis Status
 -------------
-[![Build Status](https://magnum.travis-ci.com/eythorsnaer/TicTacToe-SoftwareBoys.svg?token=xLTUxUoAa8TNZ9sKmYTN)](https://magnum.travis-ci.com/eythorsnaer/TicTacToe-SoftwareBoys)
+[![Build Status](https://magnum.travis-ci.com/eythorsnaer/TicTacToe-SoftwareBoys.svg?token=usGkS1ayTZsj5b316kCN&branch=master)](https://magnum.travis-ci.com/eythorsnaer/TicTacToe-SoftwareBoys)
