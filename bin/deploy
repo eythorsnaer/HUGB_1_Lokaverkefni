@@ -1,14 +1,17 @@
 #!/bin/bash
 
-
 if [ ! -d ~/tmp ]; then
 	mkdir ~/tmp/
-	mkdir ~/tmp/PACKAGES
-	mkdir ~/tmp/TESTREPORT
-	mkdir ~/tmp/DOCUMENTS
+	mkdir ~/tmp/JAR
+	mkdir ~/tmp/REPORT
+	mkdir ~/tmp/TAR
+	mkdir ~/tmp/ZIP
+	mkdir ~/tmp/DOCUMENTATION
+	mkdir ~/tmp/APP
 fi
 
-WAR="TicTacToe-SoftwareBoys.war"
+
+APP="TicTacToe-SoftwareBoys"
 JAR="TicTacToe-SoftwareBoys.jar"
 TAR="TicTacToe-SoftwareBoys.tar"
 ZIP="TicTacToe-SoftwareBoys.zip"
@@ -16,20 +19,19 @@ ZIP="TicTacToe-SoftwareBoys.zip"
 
 bin/clean
 bin/build
-bin/packageScripts/packageJAR
-bin/packageScripts/packageWAR
-bin/packageScripts/packageTAR
-bin/packageScripts/packageZIP
-bin/test
+bin/package
+./gradlew installDist
 bin/DocConv
+bin/unit_test -f build/libs/${JAR}
+bin/unit_test -f build/install/TicTacToe-SoftwareBoys/bin/${APP}
 
 
+cp build/install/TicTacToe-SoftwareBoys/bin/${APP} ~/tmp/APP
+cp build/libs/${JAR} ~/tmp/JAR
+cp -a build/reports/tests/. ~/tmp/REPORT
+cp build/distributions/${TAR} ~/tmp/TAR
+cp build/distributions/${ZIP} ~/tmp/ZIP
+cp -a docs/htmls/. ~/tmp/DOCUMENTATION
 
-cp build/libs/${WAR} ~/tmp/PACKAGES
-cp build/libs/${JAR} ~/tmp/PACKAGES
-cp -a build/reports/tests/. ~/tmp/TESTREPORT
-cp build/distributions/${TAR} ~/tmp/PACKAGES
-cp build/distributions/${ZIP} ~/tmp/PACKAGES
-cp -a docs/*.html ~/tmp/DOCUMENTS
 
-
+build/install/TicTacToe-SoftwareBoys/bin/${APP}

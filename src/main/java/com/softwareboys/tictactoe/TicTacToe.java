@@ -2,7 +2,6 @@ package com.softwareboys.tictactoe;
 
 import java.util.Scanner;
 
-
 public class TicTacToe {
 	private char[][] grid;
 	private char currentPlayer;
