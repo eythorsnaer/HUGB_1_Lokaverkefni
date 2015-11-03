@@ -1,5 +1,12 @@
 *.class
 .gradle
+.ideo
+out
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
 build/
 
 # Mobile Tools for Java (J2ME)

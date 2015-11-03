@@ -8,9 +8,14 @@ if [ ! -d ~/tmp ]; then
 	mkdir ~/tmp/TAR
 	mkdir ~/tmp/ZIP
 	mkdir ~/tmp/DOCUMENTATION
+	mkdir ~/tmp/APP
 fi
 
 
+<<<<<<< HEAD
+=======
+APP="TicTacToe-SoftwareBoys"
+>>>>>>> origin/master
 JAR="TicTacToe-SoftwareBoys.jar"
 TAR="TicTacToe-SoftwareBoys.tar"
 ZIP="TicTacToe-SoftwareBoys.zip"
@@ -19,10 +24,16 @@ ZIP="TicTacToe-SoftwareBoys.zip"
 bin/clean
 bin/build
 bin/package
+./gradlew installDist
 bin/DocConv
-bin/unit_test -f /libs/${JAR}
+bin/unit_test -f build/libs/${JAR}
+bin/unit_test -f build/install/TicTacToe-SoftwareBoys/bin/${APP}
 
+<<<<<<< HEAD
+=======
 
+cp build/install/TicTacToe-SoftwareBoys/bin/${APP} ~/tmp/APP
+>>>>>>> origin/master
 cp build/libs/${JAR} ~/tmp/JAR
 cp -a build/reports/tests/. ~/tmp/REPORT
 cp build/distributions/${TAR} ~/tmp/TAR
@@ -30,4 +41,4 @@ cp build/distributions/${ZIP} ~/tmp/ZIP
 cp -a docs/htmls/. ~/tmp/DOCUMENTATION
 
 
-java -jar ~/tmp/JAR/${JAR}
+build/install/TicTacToe-SoftwareBoys/bin/${APP}
