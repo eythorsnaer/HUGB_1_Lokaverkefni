@@ -6,10 +6,13 @@ public class TicTacToe {
 	private char[][] grid;
 	private char currentPlayer;
 	private int gridSize;
+<<<<<<< HEAD
 	public boolean isOver;
 	public boolean isValidMove;
 	private int numberOfTurnsLeft;
 	public boolean isOverDraw;
+=======
+>>>>>>> bbffbb/master
 
 	TicTacToe()
 	{
@@ -17,10 +20,13 @@ public class TicTacToe {
 		gridSize = 3;
 		grid = new char[gridSize][gridSize];
 		initialize();
+<<<<<<< HEAD
 		numberOfTurnsLeft = gridSize * gridSize;
 		isOver = false;
 		isValidMove = false;
 		isOverDraw = false;
+=======
+>>>>>>> bbffbb/master
 	}
 
 	public char getPlayer()
@@ -35,11 +41,14 @@ public class TicTacToe {
 		// Does not need refractoring
 	}
 
+<<<<<<< HEAD
 	public void putSlot(int i, int j, char c)
 	{
 		grid[i][j] = c;
 	}
 
+=======
+>>>>>>> bbffbb/master
 	public void initialize()
 	{
 		for(int i = 0; i < gridSize; i++)
@@ -53,34 +62,54 @@ public class TicTacToe {
 
 	public void print()
 	{
+<<<<<<< HEAD
 		System.out.println();
 		System.out.println(getGridAsString());
 		System.out.println();
+=======
+		String gridString = getGridAsString();
+		System.out.println(gridString);
+>>>>>>> bbffbb/master
 	}
 
 	public String getGridAsString()
 	{
 		 String result = "";
 
+<<<<<<< HEAD
 		 for(int i = 0; i < gridSize; i++)
+=======
+		 for (int i = 0; i < gridSize; i++)
+>>>>>>> bbffbb/master
 		 {
 			 for (int j = 0; j < gridSize; j++)
 			 {
 				 result += grid[i][j];
+<<<<<<< HEAD
 				 if (j != gridSize - 1)
+=======
+				 if (j != 2)
+>>>>>>> bbffbb/master
 				 {
 					 result += " ";
 				 }
 			 }
+<<<<<<< HEAD
 			 if(i != gridSize - 1)
 			 {
 				 result += " \n";
+=======
+			 if (i != 2)
+			 {
+				 result += "\n";
+>>>>>>> bbffbb/master
 			 }
 		 }
 
 		 return result;
 	}
 
+<<<<<<< HEAD
 	public void changePlayer()
 	{
 		if(currentPlayer == 'X')
@@ -173,6 +202,11 @@ public class TicTacToe {
 		}
 
 		return false;
+=======
+	public static void main(String[] args)
+	{
+
+>>>>>>> bbffbb/master
 	}
 
 	public void isWinner()
