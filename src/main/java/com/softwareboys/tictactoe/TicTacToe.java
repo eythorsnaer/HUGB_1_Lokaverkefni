@@ -2,6 +2,9 @@ package is.softwareboys.tictactoe;
 
 import java.util.Scanner;
 
+import static spark.Spark.*;
+
+
 public class TicTacToe {
 	private char[][] grid;
 	private char currentPlayer;
@@ -313,10 +316,18 @@ public class TicTacToe {
 
 	public static void main(String[] args)
 	{
+		String port = System.getenv("PORT");
+        if (port != null) {
+            setPort(Integer.valueOf(port));
+        }
 		TicTacToe game = new TicTacToe();
-		game.printWelcomeMessage();
-		game.print();
-		game.play();
-		game.declareWinner();
+		post("/printWelcomeMessage", (req, res) -> game.printWelcomeMessage());
+		post("/print", (req, res) -> game.print());
+		get("/play"), (req, res) -> game.play());
+		get("/declareWinner"), (req, res) -> game.declareWinner());
+		//game.printWelcomeMessage();
+		//game.print();
+		//game.play();
+		//game.declareWinner();
 	}
 }
