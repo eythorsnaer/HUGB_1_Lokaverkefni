@@ -7,4 +7,6 @@ How to set it up and get it to run on a fresh machine:
 ###Running locally
 
 * Download the latest version of TicTacToe
-* Run TicTacToe.xxx in the TicTacToe/bin folder
+* Make sure pandoc and java is installed on your machine
+* Open terminal or any shell
+* Run java -jar <pathOftmpFolder>/JAR/TicTacToe-SoftwareBoys.jar 
