@@ -1,3 +1,4 @@
+if not exist docs\htmls mkdir docs\htmls
 
 pandoc -f markdown -t html docs/Design-Report.md > docs/htmls/Design-Report.html
 pandoc -f markdown -t html docs/Development-Manual.md > docs/htmls/Development-Manual.html
