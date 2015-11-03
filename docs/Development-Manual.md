@@ -42,12 +42,17 @@ You should familiarize yourself with basic git commands and when that is done yo
 *  Open shell
 *  Clone the repo
 *  Navigate to root of the project
-*  Run 'sh ./bin/build'
-
+*  Run
+  ```
+    $sh ./bin/build
+  ```
+  
 ###Windows
 
 * Open cmd
 * Clone the repo
 * Navigate to root of the project
-* Run 'call bin/build.bat'
-
+* Run 
+  ```
+    $call bin/build.bat
+  ```
