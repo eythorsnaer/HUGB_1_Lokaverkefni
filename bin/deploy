@@ -9,13 +9,11 @@ if [ ! -d ~/tmp ]; then
 	mkdir ~/tmp/ZIP
 	mkdir ~/tmp/DOCUMENTATION
 	mkdir ~/tmp/APP
+	mkdir ~/tmp/WAR
 fi
 
-
-<<<<<<< HEAD
-=======
+WAR="TicTacToe-SoftwareBoys.war"
 APP="TicTacToe-SoftwareBoys"
->>>>>>> origin/master
 JAR="TicTacToe-SoftwareBoys.jar"
 TAR="TicTacToe-SoftwareBoys.tar"
 ZIP="TicTacToe-SoftwareBoys.zip"
@@ -25,15 +23,13 @@ bin/clean
 bin/build
 bin/package
 ./gradlew installDist
+./gradlew war
 bin/DocConv
 bin/unit_test -f build/libs/${JAR}
-bin/unit_test -f build/install/TicTacToe-SoftwareBoys/bin/${APP}
 
-<<<<<<< HEAD
-=======
 
+cp build/install/TicTacToe-SoftwareBoys/lib/${WAR} ~/tmp/WAR
 cp build/install/TicTacToe-SoftwareBoys/bin/${APP} ~/tmp/APP
->>>>>>> origin/master
 cp build/libs/${JAR} ~/tmp/JAR
 cp -a build/reports/tests/. ~/tmp/REPORT
 cp build/distributions/${TAR} ~/tmp/TAR
