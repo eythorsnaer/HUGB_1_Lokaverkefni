@@ -1,7 +1,6 @@
 set JAR="TicTacToe-SoftwareBoys.jar"
 set TAR="TicTacToe-SoftwareBoys.tar"
 set ZIP="TicTacToe-SoftwareBoys.zip"
-set APP="TicTacToe-SoftwareBoys"
 set AMhtml="Administration-Manual.html"
 set DRhtml="Design-Report.html"
 set DMhtml="Development-Manual.html"
@@ -11,7 +10,6 @@ set LOCATIONOFZIP="C:\temp\ZIP"
 set LOCATIONOFTAR="C:\temp\TAR"
 set LOCATIONOFJAR="C:\temp\JAR"
 set LOCATIONOFWAR="C:\temp\WAR"
-set LOCATIONOFAPP="C:\temp\APP"
 set LOCATIONOFDOCUMENTATION="C:\temp\DOCUMENTATION"
 
 REM Always deploy new version, clean, build, package(jar), convert docs, unit test.
@@ -21,16 +19,14 @@ call bin\packageScripts\packageTAR.bat
 call bin\packageScripts\packageZIP.bat
 call bin\packageScripts\packageJAR.bat
 call bin\packageScripts\packageWAR.bat
-call bin\packageScripts\packageAPP.bat
 call bin\DocConv.bat
-call bin\unit_test.bat
+call bin\test.bat
 
 REM If directory exists, remove it
 if exist %LOCATIONOFJAR% del /F %LOCATIONOFJAR%
 if exist %LOCATIONOFZIP% del /F %LOCATIONOFZIP%
 if exist %LOCATIONOFTAR% del /F %LOCATIONOFTAR%
 if exist %LOCATIONOFWAR% del /F %LOCATIONOFWAR%
-if exist %LOCATIONOFAPP% del /F %LOCATIONOFAPP%
 if exist %LOCATIONOFDOCUMENTATION% del /F %LOCATIONOFDOCUMENTATION%
 if exist %LOCATION% del /F %LOCATION%
 
@@ -40,14 +36,12 @@ if not exist "%LOCATIONOFJAR%" mkdir %LOCATIONOFJAR%
 if not exist "%LOCATIONOFZIP%" mkdir %LOCATIONOFZIP%
 if not exist "%LOCATIONOFTAR%" mkdir %LOCATIONOFTAR%
 if not exist "%LOCATIONOFWAR%" mkdir %LOCATIONOFWAR%
-if not exist "%LOCATIONOFAPP%" mkdir %LOCATIONOFAPP%
 if not exist "%LOCATIONOFDOCUMENTATION%" mkdir %LOCATIONOFDOCUMENTATION%
 
 REM Copy the packaged files/report to directory outside working directory.
 copy build\libs\%JAR% %LOCATIONOFJAR%
 copy build\distributions\%TAR% %LOCATIONOFTAR%
 copy build\distributions\%ZIP% %LOCATIONOFZIP%
-copy build\install\TicTacToe-SoftwareBoys\bin\%APP% %LOCATIONOFAPP%
 xcopy build\reports %LOCATION% /s /e /y
 copy docs\htmls\%AMhtml% %LOCATIONOFDOCUMENTATION%
 copy docs\htmls\%DRhtml% %LOCATIONOFDOCUMENTATION%
@@ -55,4 +49,3 @@ copy docs\htmls\%DMhtml% %LOCATIONOFDOCUMENTATION%
 
 REM Run application once
 java -jar %LOCATIONOFJAR%\\%JAR%
-
