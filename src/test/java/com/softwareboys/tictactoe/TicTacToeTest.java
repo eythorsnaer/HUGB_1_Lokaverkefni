@@ -8,6 +8,7 @@ public class TicTacToeTest {
 
     TicTacToe game;
 
+
     @Test
 	public void constructorTest()
 	{
@@ -37,7 +38,6 @@ public class TicTacToeTest {
 	{
 		game = new TicTacToe();
 
-<<<<<<< HEAD
 		assertEquals("- - - \n- - - \n- - -", game.getGridAsString());
 	}
 
@@ -140,9 +140,5 @@ public class TicTacToeTest {
 
     assertEquals(false, game.isNumeric("k"));
   }
-=======
-		assertEquals("- - -\n- - -\n- - -", game.getGridAsString());
-	}
->>>>>>> bbffbb/master
 
 }
